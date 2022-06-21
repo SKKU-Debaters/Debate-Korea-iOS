@@ -5,7 +5,6 @@
 //  Created by 이청수 on 2022/06/08.
 //
 
-//import RxRelay
 import RxSwift
 import RxCocoa
 import RxTest
@@ -52,7 +51,6 @@ final class AddChatRoomViewModelTests: XCTestCase {
     }
 
     func test_제목을_입력하지_않으면_제출할_수_없다() {
-
         let titleTestableDriver: Driver<String> = self.scheduler.createHotObservable([
             .next(10, "a"),
             .next(20, ""),
@@ -64,13 +62,11 @@ final class AddChatRoomViewModelTests: XCTestCase {
             .next(10, ())
         ]).asDriverOnErrorJustComplete()
 
-        let exitTriggerTestableDriver: Driver<Void> = self.scheduler.createHotObservable([
-            .next(10, ())
-        ]).asDriverOnErrorJustComplete()
+        let exitTriggerTestableDriver: Driver<Void> = self.scheduler.createHotObservable([])
+            .asDriverOnErrorJustComplete()
 
-        let submitTriggerTestableDriver: Driver<Void> = self.scheduler.createHotObservable([
-            .next(10, ())
-        ]).asDriverOnErrorJustComplete()
+        let submitTriggerTestableDriver: Driver<Void> = self.scheduler.createHotObservable([])
+            .asDriverOnErrorJustComplete()
 
         let testableObserver = self.scheduler.createObserver(Bool.self)
 
@@ -94,14 +90,15 @@ final class AddChatRoomViewModelTests: XCTestCase {
             .next(30, true),
             .next(40, false)
         ])
-
     }
+
+    // TODO: 채팅방 최대 길이에 대한 테스트 추가하기
 
 }
 
 extension AddChatRoomViewModelTests {
 
-    class MockAddChatRoomNavigator: AddChatRoomNavigator {
+    final class MockAddChatRoomNavigator: AddChatRoomNavigator {
 
         func toAddChatRoom(_ userID: String) {}
 

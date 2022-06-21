@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2A7E462862012300B62C7D /* AddDiscussionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A7E452862012300B62C7D /* AddDiscussionViewModelTests.swift */; };
+		3F2A7E472862023400B62C7D /* AddDiscussionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03F12849A4470086F59A /* AddDiscussionViewModel.swift */; };
+		3F2A7E482862023400B62C7D /* AddDiscussionNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03F22849A4470086F59A /* AddDiscussionNavigator.swift */; };
+		3F2A7E4A2862031E00B62C7D /* MockDiscussionUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A7E492862031E00B62C7D /* MockDiscussionUsecase.swift */; };
+		3F2A7E4B2862067B00B62C7D /* AddDiscussionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03F02849A4470086F59A /* AddDiscussionViewController.swift */; };
 		3F33B02A284993C300FF1783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F33B029284993C300FF1783 /* Assets.xcassets */; };
 		3F6FC86F2849EC7200A08784 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6FC86E2849EC7200A08784 /* RxCocoa */; };
 		3F6FC8752849EFCF00A08784 /* FirebasePlatform in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6FC8742849EFCF00A08784 /* FirebasePlatform */; };
@@ -108,6 +113,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F2A7E452862012300B62C7D /* AddDiscussionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiscussionViewModelTests.swift; sourceTree = "<group>"; };
+		3F2A7E492862031E00B62C7D /* MockDiscussionUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDiscussionUsecase.swift; sourceTree = "<group>"; };
 		3F33B01D284993C100FF1783 /* Virtual-Korea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual-Korea.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F33B029284993C300FF1783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F33B02E284993C300FF1783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -241,79 +248,17 @@
 			children = (
 				3F6FC90F2850B24100A08784 /* Mock */,
 				3F6FC90A2850AF2600A08784 /* AddChatRoomViewModelTests.swift */,
-				3F6FC8FF2850A6D000A08784 /* AddDiscussionScene */,
-				3F6FC9012850A6EC00A08784 /* ChatRoom */,
-				3F6FC9022850A6F300A08784 /* ChatRoomList */,
-				3F6FC9052850A71500A08784 /* ChatRoomSchedule */,
-				3F6FC9002850A6E100A08784 /* ChatRoomSideMenu */,
-				3F6FC9032850A6FE00A08784 /* EnterGuest */,
-				3F6FC8FD2850A6BD00A08784 /* HomeScene */,
-				3F6FC9042850A70A00A08784 /* Setting */,
+				3F2A7E452862012300B62C7D /* AddDiscussionViewModelTests.swift */,
 			);
 			path = "Virtual-Korea-ViewModelTests";
-			sourceTree = "<group>";
-		};
-		3F6FC8FD2850A6BD00A08784 /* HomeScene */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HomeScene;
-			sourceTree = "<group>";
-		};
-		3F6FC8FF2850A6D000A08784 /* AddDiscussionScene */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AddDiscussionScene;
-			sourceTree = "<group>";
-		};
-		3F6FC9002850A6E100A08784 /* ChatRoomSideMenu */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChatRoomSideMenu;
-			sourceTree = "<group>";
-		};
-		3F6FC9012850A6EC00A08784 /* ChatRoom */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChatRoom;
-			sourceTree = "<group>";
-		};
-		3F6FC9022850A6F300A08784 /* ChatRoomList */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChatRoomList;
-			sourceTree = "<group>";
-		};
-		3F6FC9032850A6FE00A08784 /* EnterGuest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EnterGuest;
-			sourceTree = "<group>";
-		};
-		3F6FC9042850A70A00A08784 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
-		3F6FC9052850A71500A08784 /* ChatRoomSchedule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChatRoomSchedule;
 			sourceTree = "<group>";
 		};
 		3F6FC90F2850B24100A08784 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				3F6FC9102850B30C00A08784 /* MockUserInfoUsecase.swift */,
 				3F6FC9122850B31E00A08784 /* MockChatRoomUsecase.swift */,
+				3F2A7E492862031E00B62C7D /* MockDiscussionUsecase.swift */,
+				3F6FC9102850B30C00A08784 /* MockUserInfoUsecase.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -701,9 +646,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2A7E4B2862067B00B62C7D /* AddDiscussionViewController.swift in Sources */,
+				3F2A7E472862023400B62C7D /* AddDiscussionViewModel.swift in Sources */,
+				3F2A7E482862023400B62C7D /* AddDiscussionNavigator.swift in Sources */,
 				3F6FC91A2857347D00A08784 /* UIImageView+.swift in Sources */,
 				3F6FC9192857347A00A08784 /* UIColor+.swift in Sources */,
+				3F2A7E462862012300B62C7D /* AddDiscussionViewModelTests.swift in Sources */,
 				3F6FC9182857346700A08784 /* Observable+.swift in Sources */,
+				3F2A7E4A2862031E00B62C7D /* MockDiscussionUsecase.swift in Sources */,
 				3F6FC9172857344500A08784 /* AddChatRoomViewController.swift in Sources */,
 				3F6FC9162857339E00A08784 /* ActivityTracker.swift in Sources */,
 				3F6FC9152857339800A08784 /* ErrorTracker.swift in Sources */,
