@@ -10,10 +10,14 @@ import RxSwift
 
 final class MockChatRoomUsecase: Domain.ChatRoomsUsecase {
 
+    // MARK: properties
+
     let chatRoomsStream: Observable<ChatRoom>
     let createChatRoomStream: Observable<Void>
     let latestChatStream: Observable<Chat>
     let userNumberStream: Observable<UInt>
+
+    // MARK: - init/deinit
 
     init() {
         self.chatRoomsStream = PublishSubject<ChatRoom>.init()
@@ -21,6 +25,8 @@ final class MockChatRoomUsecase: Domain.ChatRoomsUsecase {
         self.latestChatStream = PublishSubject<Chat>.init()
         self.userNumberStream = PublishSubject<UInt>.init()
     }
+
+    // MARK: - methods
 
     func chatRooms() -> Observable<ChatRoom> {
         self.chatRoomsStream

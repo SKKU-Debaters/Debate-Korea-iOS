@@ -10,6 +10,8 @@ import RxSwift
 
 final class MockUserInfoUsecase: Domain.UserInfoUsecase {
 
+    // MARK: properties
+
     let addEventStream: PublishSubject<Void>
     let addSideEventStream: PublishSubject<Void>
     let addUserInfoStream: PublishSubject<Void>
@@ -19,6 +21,8 @@ final class MockUserInfoUsecase: Domain.UserInfoUsecase {
     let roomUserInfoStream: PublishSubject<UserInfo?>
     let connectStream: PublishSubject<UserInfo>
     let userInfoStream: PublishSubject<UserInfo?>
+
+    // MARK: - init/deinit
 
     init() {
         self.addEventStream = PublishSubject<Void>.init()
@@ -31,6 +35,8 @@ final class MockUserInfoUsecase: Domain.UserInfoUsecase {
         self.connectStream = PublishSubject<UserInfo>.init()
         self.userInfoStream = PublishSubject<UserInfo?>.init()
     }
+
+    // MARK: - methods
 
     func add(roomID: String, userID: String) -> Observable<Void> {
         self.addEventStream

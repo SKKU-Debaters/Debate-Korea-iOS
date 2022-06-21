@@ -20,24 +20,24 @@ final class ChatRoomViewModel: ViewModelType {
 
     private let chatRoom: ChatRoom
 
+    private let navigator: ChatRoomNavigator
+
     private let chatsUsecase: Domain.ChatsUsecase
     private let userInfoUsecase: Domain.UserInfoUsecase
     private let discussionUsecase: Domain.DiscussionUsecase
 
-    private let navigator: ChatRoomNavigator
-
     // MARK: - init/deinit
 
     init(chatRoom: ChatRoom,
+         navigator: ChatRoomNavigator,
          chatsUsecase: Domain.ChatsUsecase,
          userInfoUsecase: Domain.UserInfoUsecase,
-         discussionUsecase: Domain.DiscussionUsecase,
-         navigator: ChatRoomNavigator) {
+         discussionUsecase: Domain.DiscussionUsecase) {
         self.chatRoom = chatRoom
+        self.navigator = navigator
         self.chatsUsecase = chatsUsecase
         self.userInfoUsecase = userInfoUsecase
         self.discussionUsecase = discussionUsecase
-        self.navigator = navigator
     }
 
     deinit {
