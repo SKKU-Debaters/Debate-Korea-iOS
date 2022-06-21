@@ -8,11 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		3F33B02A284993C300FF1783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F33B029284993C300FF1783 /* Assets.xcassets */; };
-		3F33B038284993C400FF1783 /* Virtual_KoreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F33B037284993C400FF1783 /* Virtual_KoreaTests.swift */; };
-		3F33B042284993C400FF1783 /* Virtual_KoreaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F33B041284993C400FF1783 /* Virtual_KoreaUITests.swift */; };
-		3F33B044284993C400FF1783 /* Virtual_KoreaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F33B043284993C400FF1783 /* Virtual_KoreaUITestsLaunchTests.swift */; };
 		3F6FC86F2849EC7200A08784 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6FC86E2849EC7200A08784 /* RxCocoa */; };
 		3F6FC8752849EFCF00A08784 /* FirebasePlatform in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6FC8742849EFCF00A08784 /* FirebasePlatform */; };
+		3F6FC9092850ABC100A08784 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6FC9082850ABC100A08784 /* RxTest */; };
+		3F6FC90B2850AF2600A08784 /* AddChatRoomViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FC90A2850AF2600A08784 /* AddChatRoomViewModelTests.swift */; };
+		3F6FC90C2850AF7B00A08784 /* AddChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03C72849A4470086F59A /* AddChatRoomViewModel.swift */; };
+		3F6FC90D2850AFFB00A08784 /* Domain.framework in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD043C2849AA900086F59A /* Domain.framework */; };
+		3F6FC90E2850B22700A08784 /* AddChatRoomNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03C92849A4470086F59A /* AddChatRoomNavigator.swift */; };
+		3F6FC9112850B30C00A08784 /* MockUserInfoUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FC9102850B30C00A08784 /* MockUserInfoUsecase.swift */; };
+		3F6FC9132850B31E00A08784 /* MockChatRoomUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6FC9122850B31E00A08784 /* MockChatRoomUsecase.swift */; };
+		3F6FC9142857337B00A08784 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03BE2849A42A0086F59A /* ViewModelType.swift */; };
+		3F6FC9152857339800A08784 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD04262849A4510086F59A /* ErrorTracker.swift */; };
+		3F6FC9162857339E00A08784 /* ActivityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD04282849A4510086F59A /* ActivityTracker.swift */; };
+		3F6FC9172857344500A08784 /* AddChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03C82849A4470086F59A /* AddChatRoomViewController.swift */; };
+		3F6FC9182857346700A08784 /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD04292849A4510086F59A /* Observable+.swift */; };
+		3F6FC9192857347A00A08784 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD042A2849A4510086F59A /* UIColor+.swift */; };
+		3F6FC91A2857347D00A08784 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD04272849A4510086F59A /* UIImageView+.swift */; };
 		3FDD03A628499DBB0086F59A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDD03A528499DBB0086F59A /* Kingfisher */; };
 		3FDD03AC28499E490086F59A /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDD03AB28499E490086F59A /* SideMenu */; };
 		3FDD03AF28499F3B0086F59A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDD03AE28499F3B0086F59A /* SnapKit */; };
@@ -74,14 +85,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3F33B034284993C400FF1783 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3F33B015284993C100FF1783 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3F33B01C284993C100FF1783;
-			remoteInfo = "Virtual-Korea";
-		};
-		3F33B03E284993C400FF1783 /* PBXContainerItemProxy */ = {
+		3F6FC8F82850A62F00A08784 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3F33B015284993C100FF1783 /* Project object */;
 			proxyType = 1;
@@ -107,11 +111,10 @@
 		3F33B01D284993C100FF1783 /* Virtual-Korea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual-Korea.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F33B029284993C300FF1783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F33B02E284993C300FF1783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F33B033284993C400FF1783 /* Virtual-KoreaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Virtual-KoreaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F33B037284993C400FF1783 /* Virtual_KoreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Virtual_KoreaTests.swift; sourceTree = "<group>"; };
-		3F33B03D284993C400FF1783 /* Virtual-KoreaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Virtual-KoreaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F33B041284993C400FF1783 /* Virtual_KoreaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Virtual_KoreaUITests.swift; sourceTree = "<group>"; };
-		3F33B043284993C400FF1783 /* Virtual_KoreaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Virtual_KoreaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F6FC8F42850A62F00A08784 /* Virtual-Korea-ViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Virtual-Korea-ViewModelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6FC90A2850AF2600A08784 /* AddChatRoomViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChatRoomViewModelTests.swift; sourceTree = "<group>"; };
+		3F6FC9102850B30C00A08784 /* MockUserInfoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserInfoUsecase.swift; sourceTree = "<group>"; };
+		3F6FC9122850B31E00A08784 /* MockChatRoomUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChatRoomUsecase.swift; sourceTree = "<group>"; };
 		3FDD03B42849A1990086F59A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FDD03B72849A1A80086F59A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDD03B82849A1A80086F59A /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
@@ -183,17 +186,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3F33B030284993C400FF1783 /* Frameworks */ = {
+		3F6FC8F12850A62F00A08784 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3F33B03A284993C400FF1783 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				3F6FC9092850ABC100A08784 /* RxTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,8 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				3F33B01F284993C100FF1783 /* Virtual-Korea */,
-				3F33B036284993C400FF1783 /* Virtual-KoreaTests */,
-				3F33B040284993C400FF1783 /* Virtual-KoreaUITests */,
+				3F6FC8F52850A62F00A08784 /* Virtual-Korea-ViewModelTests */,
 				3F33B01E284993C100FF1783 /* Products */,
 				3F33B059284994D200FF1783 /* Frameworks */,
 			);
@@ -215,8 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				3F33B01D284993C100FF1783 /* Virtual-Korea.app */,
-				3F33B033284993C400FF1783 /* Virtual-KoreaTests.xctest */,
-				3F33B03D284993C400FF1783 /* Virtual-KoreaUITests.xctest */,
+				3F6FC8F42850A62F00A08784 /* Virtual-Korea-ViewModelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,29 +228,94 @@
 			path = "Virtual-Korea";
 			sourceTree = "<group>";
 		};
-		3F33B036284993C400FF1783 /* Virtual-KoreaTests */ = {
-			isa = PBXGroup;
-			children = (
-				3F33B037284993C400FF1783 /* Virtual_KoreaTests.swift */,
-			);
-			path = "Virtual-KoreaTests";
-			sourceTree = "<group>";
-		};
-		3F33B040284993C400FF1783 /* Virtual-KoreaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3F33B041284993C400FF1783 /* Virtual_KoreaUITests.swift */,
-				3F33B043284993C400FF1783 /* Virtual_KoreaUITestsLaunchTests.swift */,
-			);
-			path = "Virtual-KoreaUITests";
-			sourceTree = "<group>";
-		};
 		3F33B059284994D200FF1783 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				3FDD043C2849AA900086F59A /* Domain.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F6FC8F52850A62F00A08784 /* Virtual-Korea-ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F6FC90F2850B24100A08784 /* Mock */,
+				3F6FC90A2850AF2600A08784 /* AddChatRoomViewModelTests.swift */,
+				3F6FC8FF2850A6D000A08784 /* AddDiscussionScene */,
+				3F6FC9012850A6EC00A08784 /* ChatRoom */,
+				3F6FC9022850A6F300A08784 /* ChatRoomList */,
+				3F6FC9052850A71500A08784 /* ChatRoomSchedule */,
+				3F6FC9002850A6E100A08784 /* ChatRoomSideMenu */,
+				3F6FC9032850A6FE00A08784 /* EnterGuest */,
+				3F6FC8FD2850A6BD00A08784 /* HomeScene */,
+				3F6FC9042850A70A00A08784 /* Setting */,
+			);
+			path = "Virtual-Korea-ViewModelTests";
+			sourceTree = "<group>";
+		};
+		3F6FC8FD2850A6BD00A08784 /* HomeScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeScene;
+			sourceTree = "<group>";
+		};
+		3F6FC8FF2850A6D000A08784 /* AddDiscussionScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddDiscussionScene;
+			sourceTree = "<group>";
+		};
+		3F6FC9002850A6E100A08784 /* ChatRoomSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatRoomSideMenu;
+			sourceTree = "<group>";
+		};
+		3F6FC9012850A6EC00A08784 /* ChatRoom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatRoom;
+			sourceTree = "<group>";
+		};
+		3F6FC9022850A6F300A08784 /* ChatRoomList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatRoomList;
+			sourceTree = "<group>";
+		};
+		3F6FC9032850A6FE00A08784 /* EnterGuest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EnterGuest;
+			sourceTree = "<group>";
+		};
+		3F6FC9042850A70A00A08784 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		3F6FC9052850A71500A08784 /* ChatRoomSchedule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatRoomSchedule;
+			sourceTree = "<group>";
+		};
+		3F6FC90F2850B24100A08784 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				3F6FC9102850B30C00A08784 /* MockUserInfoUsecase.swift */,
+				3F6FC9122850B31E00A08784 /* MockChatRoomUsecase.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		3FDD03B328499F930086F59A /* Resources */ = {
@@ -290,15 +350,15 @@
 		3FDD03C12849A4470086F59A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3FDD03C22849A4470086F59A /* Home */,
 				3FDD03C62849A4470086F59A /* AddChatRoom */,
-				3FDD03CA2849A4470086F59A /* ChatRoomSideMenu */,
+				3FDD03EF2849A4470086F59A /* AddDiscussion */,
 				3FDD03D12849A4470086F59A /* ChatRoom */,
 				3FDD03DE2849A4470086F59A /* ChatRoomList */,
-				3FDD03E52849A4470086F59A /* EnterGuest */,
-				3FDD03E92849A4470086F59A /* Setting */,
-				3FDD03EF2849A4470086F59A /* AddDiscussion */,
 				3FDD03F32849A4470086F59A /* ChatRoomSchedule */,
+				3FDD03CA2849A4470086F59A /* ChatRoomSideMenu */,
+				3FDD03E52849A4470086F59A /* EnterGuest */,
+				3FDD03C22849A4470086F59A /* Home */,
+				3FDD03E92849A4470086F59A /* Setting */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -326,10 +386,10 @@
 		3FDD03CA2849A4470086F59A /* ChatRoomSideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				3FDD03CE2849A4470086F59A /* View */,
 				3FDD03CB2849A4470086F59A /* ChatRoomSideMenuViewModel.swift */,
 				3FDD03CC2849A4470086F59A /* ParticipantItemViewModel.swift */,
 				3FDD03CD2849A4470086F59A /* ChatRoomSideMenuNavigator.swift */,
-				3FDD03CE2849A4470086F59A /* View */,
 				3FDD03D02849A4470086F59A /* ChatRoomSideMenuViewController.swift */,
 			);
 			path = ChatRoomSideMenu;
@@ -346,10 +406,10 @@
 		3FDD03D12849A4470086F59A /* ChatRoom */ = {
 			isa = PBXGroup;
 			children = (
+				3FDD03D52849A4470086F59A /* View */,
 				3FDD03D22849A4470086F59A /* ChatRoomNavigator.swift */,
 				3FDD03D32849A4470086F59A /* ChatRoomViewController.swift */,
 				3FDD03D42849A4470086F59A /* ChatItemViewModel.swift */,
-				3FDD03D52849A4470086F59A /* View */,
 				3FDD03DD2849A4470086F59A /* ChatRoomViewModel.swift */,
 			);
 			path = ChatRoom;
@@ -372,10 +432,10 @@
 		3FDD03DE2849A4470086F59A /* ChatRoomList */ = {
 			isa = PBXGroup;
 			children = (
+				3FDD03E22849A4470086F59A /* View */,
 				3FDD03DF2849A4470086F59A /* ChatRoomListViewController.swift */,
 				3FDD03E02849A4470086F59A /* ChatRoomItemViewModel.swift */,
 				3FDD03E12849A4470086F59A /* ChatRoomListNavigator.swift */,
-				3FDD03E22849A4470086F59A /* View */,
 				3FDD03E42849A4470086F59A /* ChatRoomListViewModel.swift */,
 			);
 			path = ChatRoomList;
@@ -431,9 +491,9 @@
 		3FDD03F32849A4470086F59A /* ChatRoomSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				3FDD03F62849A4470086F59A /* View */,
 				3FDD03F42849A4470086F59A /* ChatRoomScheduleNavigator.swift */,
 				3FDD03F52849A4470086F59A /* ScheduleItemViewModel.swift */,
-				3FDD03F62849A4470086F59A /* View */,
 				3FDD03F82849A4470086F59A /* ChatRoomScheduleViewModel.swift */,
 				3FDD03F92849A4470086F59A /* ChatRoomScheduleViewController.swift */,
 			);
@@ -490,41 +550,26 @@
 			productReference = 3F33B01D284993C100FF1783 /* Virtual-Korea.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3F33B032284993C400FF1783 /* Virtual-KoreaTests */ = {
+		3F6FC8F32850A62F00A08784 /* Virtual-Korea-ViewModelTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F33B04A284993C400FF1783 /* Build configuration list for PBXNativeTarget "Virtual-KoreaTests" */;
+			buildConfigurationList = 3F6FC8FC2850A62F00A08784 /* Build configuration list for PBXNativeTarget "Virtual-Korea-ViewModelTests" */;
 			buildPhases = (
-				3F33B02F284993C400FF1783 /* Sources */,
-				3F33B030284993C400FF1783 /* Frameworks */,
-				3F33B031284993C400FF1783 /* Resources */,
+				3F6FC8F02850A62F00A08784 /* Sources */,
+				3F6FC8F12850A62F00A08784 /* Frameworks */,
+				3F6FC8F22850A62F00A08784 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3F33B035284993C400FF1783 /* PBXTargetDependency */,
+				3F6FC8F92850A62F00A08784 /* PBXTargetDependency */,
 			);
-			name = "Virtual-KoreaTests";
-			productName = "Virtual-KoreaTests";
-			productReference = 3F33B033284993C400FF1783 /* Virtual-KoreaTests.xctest */;
+			name = "Virtual-Korea-ViewModelTests";
+			packageProductDependencies = (
+				3F6FC9082850ABC100A08784 /* RxTest */,
+			);
+			productName = "Virtual-Korea-ViewModelTests";
+			productReference = 3F6FC8F42850A62F00A08784 /* Virtual-Korea-ViewModelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		3F33B03C284993C400FF1783 /* Virtual-KoreaUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3F33B04D284993C400FF1783 /* Build configuration list for PBXNativeTarget "Virtual-KoreaUITests" */;
-			buildPhases = (
-				3F33B039284993C400FF1783 /* Sources */,
-				3F33B03A284993C400FF1783 /* Frameworks */,
-				3F33B03B284993C400FF1783 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3F33B03F284993C400FF1783 /* PBXTargetDependency */,
-			);
-			name = "Virtual-KoreaUITests";
-			productName = "Virtual-KoreaUITests";
-			productReference = 3F33B03D284993C400FF1783 /* Virtual-KoreaUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -539,11 +584,7 @@
 					3F33B01C284993C100FF1783 = {
 						CreatedOnToolsVersion = 13.3;
 					};
-					3F33B032284993C400FF1783 = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = 3F33B01C284993C100FF1783;
-					};
-					3F33B03C284993C400FF1783 = {
+					3F6FC8F32850A62F00A08784 = {
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = 3F33B01C284993C100FF1783;
 					};
@@ -571,8 +612,7 @@
 			projectRoot = "";
 			targets = (
 				3F33B01C284993C100FF1783 /* Virtual-Korea */,
-				3F33B032284993C400FF1783 /* Virtual-KoreaTests */,
-				3F33B03C284993C400FF1783 /* Virtual-KoreaUITests */,
+				3F6FC8F32850A62F00A08784 /* Virtual-Korea-ViewModelTests */,
 			);
 		};
 /* End PBXProject section */
@@ -588,14 +628,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3F33B031284993C400FF1783 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3F33B03B284993C400FF1783 /* Resources */ = {
+		3F6FC8F22850A62F00A08784 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -664,35 +697,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3F33B02F284993C400FF1783 /* Sources */ = {
+		3F6FC8F02850A62F00A08784 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F33B038284993C400FF1783 /* Virtual_KoreaTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3F33B039284993C400FF1783 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3F33B042284993C400FF1783 /* Virtual_KoreaUITests.swift in Sources */,
-				3F33B044284993C400FF1783 /* Virtual_KoreaUITestsLaunchTests.swift in Sources */,
+				3F6FC91A2857347D00A08784 /* UIImageView+.swift in Sources */,
+				3F6FC9192857347A00A08784 /* UIColor+.swift in Sources */,
+				3F6FC9182857346700A08784 /* Observable+.swift in Sources */,
+				3F6FC9172857344500A08784 /* AddChatRoomViewController.swift in Sources */,
+				3F6FC9162857339E00A08784 /* ActivityTracker.swift in Sources */,
+				3F6FC9152857339800A08784 /* ErrorTracker.swift in Sources */,
+				3F6FC9142857337B00A08784 /* ViewModelType.swift in Sources */,
+				3F6FC9132850B31E00A08784 /* MockChatRoomUsecase.swift in Sources */,
+				3F6FC90E2850B22700A08784 /* AddChatRoomNavigator.swift in Sources */,
+				3F6FC90D2850AFFB00A08784 /* Domain.framework in Sources */,
+				3F6FC90C2850AF7B00A08784 /* AddChatRoomViewModel.swift in Sources */,
+				3F6FC90B2850AF2600A08784 /* AddChatRoomViewModelTests.swift in Sources */,
+				3F6FC9112850B30C00A08784 /* MockUserInfoUsecase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3F33B035284993C400FF1783 /* PBXTargetDependency */ = {
+		3F6FC8F92850A62F00A08784 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3F33B01C284993C100FF1783 /* Virtual-Korea */;
-			targetProxy = 3F33B034284993C400FF1783 /* PBXContainerItemProxy */;
-		};
-		3F33B03F284993C400FF1783 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3F33B01C284993C100FF1783 /* Virtual-Korea */;
-			targetProxy = 3F33B03E284993C400FF1783 /* PBXContainerItemProxy */;
+			targetProxy = 3F6FC8F82850A62F00A08784 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -869,18 +900,16 @@
 			};
 			name = Release;
 		};
-		3F33B04B284993C400FF1783 /* Debug */ = {
+		3F6FC8FA2850A62F00A08784 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4PL3T83JJM;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "bestowing.Virtual-KoreaTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "bestowing.Virtual-Korea-ViewModelTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -889,59 +918,21 @@
 			};
 			name = Debug;
 		};
-		3F33B04C284993C400FF1783 /* Release */ = {
+		3F6FC8FB2850A62F00A08784 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4PL3T83JJM;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "bestowing.Virtual-KoreaTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "bestowing.Virtual-Korea-ViewModelTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Virtual-Korea.app/Virtual-Korea";
-			};
-			name = Release;
-		};
-		3F33B04E284993C400FF1783 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4PL3T83JJM;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "bestowing.Virtual-KoreaUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Virtual-Korea";
-			};
-			name = Debug;
-		};
-		3F33B04F284993C400FF1783 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4PL3T83JJM;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "bestowing.Virtual-KoreaUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Virtual-Korea";
 			};
 			name = Release;
 		};
@@ -966,20 +957,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F33B04A284993C400FF1783 /* Build configuration list for PBXNativeTarget "Virtual-KoreaTests" */ = {
+		3F6FC8FC2850A62F00A08784 /* Build configuration list for PBXNativeTarget "Virtual-Korea-ViewModelTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F33B04B284993C400FF1783 /* Debug */,
-				3F33B04C284993C400FF1783 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3F33B04D284993C400FF1783 /* Build configuration list for PBXNativeTarget "Virtual-KoreaUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3F33B04E284993C400FF1783 /* Debug */,
-				3F33B04F284993C400FF1783 /* Release */,
+				3F6FC8FA2850A62F00A08784 /* Debug */,
+				3F6FC8FB2850A62F00A08784 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1047,6 +1029,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3F6FC8732849EFCF00A08784 /* XCRemoteSwiftPackageReference "Discussion-Korea-FirebasePlatform" */;
 			productName = FirebasePlatform;
+		};
+		3F6FC9082850ABC100A08784 /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FDD03B028499F650086F59A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
 		};
 		3FDD03A528499DBB0086F59A /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
