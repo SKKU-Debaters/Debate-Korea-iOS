@@ -12,15 +12,15 @@ final class MockUserInfoUsecase: Domain.UserInfoUsecase {
 
     // MARK: properties
 
-    let addEventStream: PublishSubject<Void>
-    let addSideEventStream: PublishSubject<Void>
-    let addUserInfoStream: PublishSubject<Void>
-    let clearSideStream: PublishSubject<Void>
-    let voteStream: PublishSubject<Void>
-    let uidStream: PublishSubject<String>
-    let roomUserInfoStream: PublishSubject<UserInfo?>
-    let connectStream: PublishSubject<UserInfo>
-    let userInfoStream: PublishSubject<UserInfo?>
+    var addEventStream: Observable<Void>
+    var addSideEventStream: Observable<Void>
+    var addUserInfoStream: Observable<Void>
+    var clearSideStream: Observable<Void>
+    var voteStream: Observable<Void>
+    var uidStream: Observable<String>
+    var roomUserInfoStream: Observable<UserInfo?>
+    var connectStream: Observable<UserInfo>
+    var userInfoStream: Observable<UserInfo?>
 
     // MARK: - init/deinit
 
@@ -39,39 +39,39 @@ final class MockUserInfoUsecase: Domain.UserInfoUsecase {
     // MARK: - methods
 
     func add(roomID: String, userID: String) -> Observable<Void> {
-        self.addEventStream
+        return self.addEventStream
     }
 
     func add(roomID: String, userID: String, side: Side) -> Observable<Void> {
-        self.addSideEventStream
+        return self.addSideEventStream
     }
 
     func add(userInfo: UserInfo) -> Observable<Void> {
-        self.addUserInfoStream
+        return self.addUserInfoStream
     }
 
     func clearSide(roomID: String, userID: String) -> Observable<Void> {
-        self.clearSideStream
+        return self.clearSideStream
     }
 
     func vote(roomID: String, userID: String, side: Side) -> Observable<Void> {
-        self.voteStream
+        return self.voteStream
     }
 
     func uid() -> Observable<String> {
-        self.uidStream
+        return self.uidStream
     }
 
     func userInfo(roomID: String, with userID: String) -> Observable<UserInfo?> {
-        self.roomUserInfoStream
+        return self.roomUserInfoStream
     }
 
     func connect(roomID: String) -> Observable<UserInfo> {
-        self.connectStream
+        return self.connectStream
     }
 
     func userInfo(userID: String) -> Observable<UserInfo?> {
-        self.userInfoStream
+        return self.userInfoStream
     }
 
 }

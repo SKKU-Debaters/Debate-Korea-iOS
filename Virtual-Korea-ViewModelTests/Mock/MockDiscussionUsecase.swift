@@ -13,11 +13,11 @@ final class MockDiscussionUsecase: Domain.DiscussionUsecase {
 
     // MARK: properties
 
-    let discussionStream: PublishSubject<Discussion>
-    let addRoomEventStream: PublishSubject<Void>
-    let statusStream: PublishSubject<Int>
-    let remainTimeStream: PublishSubject<Date>
-    let discussionResultStream: PublishSubject<Discussion.Result>
+    var discussionStream: Observable<Discussion>
+    var addRoomEventStream: Observable<Void>
+    var statusStream: Observable<Int>
+    var remainTimeStream: Observable<Date>
+    var discussionResultStream: Observable<Discussion.Result>
 
     // MARK: - init/deinit
 
@@ -32,23 +32,23 @@ final class MockDiscussionUsecase: Domain.DiscussionUsecase {
     // MARK: - methods
 
     func discussions(roomUID: String) -> Observable<Discussion> {
-        self.discussionStream
+        return self.discussionStream
     }
     
     func add(roomUID: String, discussion: Discussion) -> Observable<Void> {
-        self.addRoomEventStream
+        return self.addRoomEventStream
     }
     
     func status(roomUID: String) -> Observable<Int> {
-        self.statusStream
+        return self.statusStream
     }
     
     func remainTime(roomUID: String) -> Observable<Date> {
-        self.remainTimeStream
+        return self.remainTimeStream
     }
     
     func discussionResult(userID: String, chatRoomID: String) -> Observable<Discussion.Result> {
-        self.discussionResultStream
+        return self.discussionResultStream
     }
 
 }

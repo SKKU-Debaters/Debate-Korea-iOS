@@ -12,10 +12,10 @@ final class MockChatRoomUsecase: Domain.ChatRoomsUsecase {
 
     // MARK: properties
 
-    let chatRoomsStream: Observable<ChatRoom>
-    let createChatRoomStream: Observable<Void>
-    let latestChatStream: Observable<Chat>
-    let userNumberStream: Observable<UInt>
+    var chatRoomsStream: Observable<ChatRoom>
+    var createChatRoomStream: Observable<Void>
+    var latestChatStream: Observable<Chat>
+    var userNumberStream: Observable<UInt>
 
     // MARK: - init/deinit
 
@@ -29,19 +29,19 @@ final class MockChatRoomUsecase: Domain.ChatRoomsUsecase {
     // MARK: - methods
 
     func chatRooms() -> Observable<ChatRoom> {
-        self.chatRoomsStream
+        return self.chatRoomsStream
     }
 
     func create(chatRoom: ChatRoom) -> Observable<Void> {
-        self.createChatRoomStream
+        return self.createChatRoomStream
     }
     
     func latestChat(chatRoomID: String) -> Observable<Chat> {
-        self.latestChatStream
+        return self.latestChatStream
     }
     
     func numberOfUsers(chatRoomID: String) -> Observable<UInt> {
-        self.userNumberStream
+        return self.userNumberStream
     }
 
 }

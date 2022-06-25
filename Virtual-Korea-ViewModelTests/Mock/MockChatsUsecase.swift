@@ -12,10 +12,10 @@ final class MockChatsUsecase: Domain.ChatsUsecase {
 
     // MARK: properties
 
-    let chatsStream: PublishSubject<[Chat]>
-    let connectStream: PublishSubject<Chat>
-    let sendEventStream: PublishSubject<Void>
-    let maskingStream: PublishSubject<String>
+    var chatsStream: Observable<[Chat]>
+    var connectStream: Observable<Chat>
+    var sendEventStream: Observable<Void>
+    var maskingStream: Observable<String>
 
     // MARK: - init/deinit
 
@@ -29,19 +29,19 @@ final class MockChatsUsecase: Domain.ChatsUsecase {
     // MARK: - methods
 
     func chats(roomUID: String) -> Observable<[Chat]> {
-        self.chatsStream
+        return self.chatsStream
     }
     
     func connect(roomUID: String, after chatUID: String?) -> Observable<Chat> {
-        self.connectStream
+        return self.connectStream
     }
     
     func send(roomUID: String, chat: Chat) -> Observable<Void> {
-        self.sendEventStream
+        return self.sendEventStream
     }
     
     func masking(roomUID: String) -> Observable<String> {
-        self.maskingStream
+        return self.maskingStream
     }
 
 }
