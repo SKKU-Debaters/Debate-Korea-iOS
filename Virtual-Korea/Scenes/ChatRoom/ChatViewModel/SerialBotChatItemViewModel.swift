@@ -10,7 +10,7 @@ import UIKit
 final class SerialBotChatItemViewModel: ChatItemViewModel {
 
     override var identifier: String {
-        return SerialBotChatCell.identifier
+        return "SerialBotChatCell"
     }
 
     override var textColor: UIColor? {

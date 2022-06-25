@@ -10,7 +10,7 @@ import UIKit
 final class SelfChatItemViewModel: ChatItemViewModel {
 
     override var identifier: String {
-        return SelfChatCell.identifier
+        return "SelfChatCell"
     }
 
     override var textColor: UIColor? {
