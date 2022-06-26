@@ -285,7 +285,7 @@
 		3F33B014284993C100FF1783 = {
 			isa = PBXGroup;
 			children = (
-				3F33B01F284993C100FF1783 /* Virtual-Korea */,
+				3F33B01F284993C100FF1783 /* Discussion-Korea */,
 				3F6FC8F52850A62F00A08784 /* Virtual-Korea-ViewModelTests */,
 				3F33B01E284993C100FF1783 /* Products */,
 				3F33B059284994D200FF1783 /* Frameworks */,
@@ -301,7 +301,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F33B01F284993C100FF1783 /* Virtual-Korea */ = {
+		3F33B01F284993C100FF1783 /* Discussion-Korea */ = {
 			isa = PBXGroup;
 			children = (
 				3FDD03B62849A1A80086F59A /* Application */,
@@ -310,7 +310,7 @@
 				3FDD03B328499F930086F59A /* Resources */,
 				3FDD04242849A4510086F59A /* Utility */,
 			);
-			path = "Virtual-Korea";
+			path = "Discussion-Korea";
 			sourceTree = "<group>";
 		};
 		3F33B059284994D200FF1783 /* Frameworks */ = {
