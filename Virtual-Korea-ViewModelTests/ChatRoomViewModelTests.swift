@@ -55,8 +55,59 @@ final class ChatRoomViewModelTests: XCTestCase {
         super.tearDown()
     }
 
-    func test_() {
-        
+    func test_찬성측인_경우_발언권이_없을때_편집이_불가능하다() {
+
+        var testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
+        testUserInfo.side = .agree
+
+        self.userInfoUsecase.uidStream = self.scheduler.createHotObservable([
+            .next(230, "testUID"),
+            .completed(232)
+        ]).asObservable()
+
+        self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
+            .next(235, testUserInfo),
+            .completed(237)
+        ]).asObservable()
+
+        self.discussionUsecase.statusStream = self.scheduler.createHotObservable([
+            .next(240, 3),
+            .next(250, 6),
+            .next(260, 7),
+            .next(270, 8),
+            .next(280, 11),
+            .next(290, 13)
+        ]).asObservable()
+
+        let triggerTestableDriver: Driver<Void> = self.scheduler.createHotObservable([
+            .next(210, ())
+        ]).asDriverOnErrorJustComplete()
+
+        let testableObserver = self.scheduler.createObserver(Bool.self)
+
+        let input = ChatRoomViewModel.Input(
+            trigger: triggerTestableDriver,
+            send: Driver.just(()),
+            menu: Driver.just(()),
+            content: Driver.just(""),
+            disappear: Driver.just(())
+        )
+        let output = self.viewModel.transform(input: input)
+
+        output.editableEnable
+            .drive(testableObserver)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(testableObserver.events, [
+            .next(240, false),
+            .next(250, false),
+            .next(260, false),
+            .next(270, false),
+            .next(280, false),
+            .next(290, false)
+        ])
     }
 
 }

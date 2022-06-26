@@ -23,6 +23,11 @@
 		3F2A7E5D2862148700B62C7D /* SerialOtherChatItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A7E5C2862148700B62C7D /* SerialOtherChatItemViewModel.swift */; };
 		3F2A7E5F286214A000B62C7D /* BotChatItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A7E5E286214A000B62C7D /* BotChatItemViewModel.swift */; };
 		3F2A7E61286214AF00B62C7D /* SerialBotChatItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A7E60286214AF00B62C7D /* SerialBotChatItemViewModel.swift */; };
+		3F2A7E6228621B7E00B62C7D /* SelfChatItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A7E582862144A00B62C7D /* SelfChatItemViewModel.swift */; };
+		3F2A7E6328621B7E00B62C7D /* OtherChatItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A7E5A2862147100B62C7D /* OtherChatItemViewModel.swift */; };
+		3F2A7E6428621B7E00B62C7D /* SerialOtherChatItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A7E5C2862148700B62C7D /* SerialOtherChatItemViewModel.swift */; };
+		3F2A7E6528621B7E00B62C7D /* BotChatItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A7E5E286214A000B62C7D /* BotChatItemViewModel.swift */; };
+		3F2A7E6628621B7E00B62C7D /* SerialBotChatItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A7E60286214AF00B62C7D /* SerialBotChatItemViewModel.swift */; };
 		3F33B02A284993C300FF1783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F33B029284993C300FF1783 /* Assets.xcassets */; };
 		3F6FC86F2849EC7200A08784 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6FC86E2849EC7200A08784 /* RxCocoa */; };
 		3F6FC8752849EFCF00A08784 /* FirebasePlatform in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6FC8742849EFCF00A08784 /* FirebasePlatform */; };
@@ -687,6 +692,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2A7E6228621B7E00B62C7D /* SelfChatItemViewModel.swift in Sources */,
+				3F2A7E6328621B7E00B62C7D /* OtherChatItemViewModel.swift in Sources */,
+				3F2A7E6428621B7E00B62C7D /* SerialOtherChatItemViewModel.swift in Sources */,
+				3F2A7E6528621B7E00B62C7D /* BotChatItemViewModel.swift in Sources */,
+				3F2A7E6628621B7E00B62C7D /* SerialBotChatItemViewModel.swift in Sources */,
 				3F2A7E572862143E00B62C7D /* ChatItemViewModel.swift in Sources */,
 				3F2A7E50286208C000B62C7D /* ChatRoomNavigator.swift in Sources */,
 				3F2A7E51286208C000B62C7D /* ChatRoomViewModel.swift in Sources */,
