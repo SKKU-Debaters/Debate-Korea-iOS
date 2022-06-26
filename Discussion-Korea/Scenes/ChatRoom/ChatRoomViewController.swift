@@ -85,7 +85,7 @@ final class ChatRoomViewController: UIViewController {
         let sendButton = UIButton()
         sendButton.setBackgroundImage(UIImage(systemName: "paperplane.fill"), for: .normal)
         sendButton.setBackgroundImage(UIImage(systemName: "paperplane"), for: .disabled)
-        sendButton.tintColor = UIColor.primaryColor
+        sendButton.tintColor = UIColor.accentColor
         // TODO: 보내기버튼 둥글게 적용하기
 //        sendButton.layer.borderColor = UIColor.primaryColor?.cgColor
 //        sendButton.layer.borderWidth = 1.0
