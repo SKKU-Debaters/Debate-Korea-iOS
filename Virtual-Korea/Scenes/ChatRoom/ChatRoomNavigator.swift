@@ -10,7 +10,7 @@ import RxSwift
 
 protocol ChatRoomNavigator {
 
-    func toChatRoom(_ chatRoom: ChatRoom)
+    func toChatRoom(_ uid: String, _ chatRoom: ChatRoom)
     func toSideMenu(_ chatRoom: ChatRoom)
     func toEnterAlert() -> Observable<Bool>
     func toSideAlert() -> Observable<Side>

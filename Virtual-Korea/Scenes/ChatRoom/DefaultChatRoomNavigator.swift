@@ -33,11 +33,12 @@ final class DefaultChatRoomNavigator: ChatRoomNavigator {
 
     // MARK: - methods
 
-    func toChatRoom(_ chatRoom: ChatRoom) {
+    func toChatRoom(_ uid: String, _ chatRoom: ChatRoom) {
         self.makeTransparentNavigationBar()
         let chatRoomViewController = ChatRoomViewController()
         chatRoomViewController.title = chatRoom.title
         let chatRoomViewModel = ChatRoomViewModel(
+            uid: uid,
             chatRoom: chatRoom,
             navigator: self,
             chatsUsecase: self.services.makeChatsUsecase(),

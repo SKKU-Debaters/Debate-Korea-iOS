@@ -34,6 +34,7 @@ final class ChatRoomViewModelTests: XCTestCase {
         self.userInfoUsecase = MockUserInfoUsecase()
         self.discussionUsecase = MockDiscussionUsecase()
         self.viewModel = ChatRoomViewModel(
+            uid: "testUID",
             chatRoom: self.chatRoom,
             navigator: self.mockNavigator,
             chatsUsecase: self.chatsUsecase,
@@ -56,14 +57,8 @@ final class ChatRoomViewModelTests: XCTestCase {
     }
 
     func test_찬성측인_경우_발언권이_없을때_편집이_불가능하다() {
-
         var testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
         testUserInfo.side = .agree
-
-        self.userInfoUsecase.uidStream = self.scheduler.createHotObservable([
-            .next(230, "testUID"),
-            .completed(232)
-        ]).asObservable()
 
         self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
             .next(235, testUserInfo),
@@ -110,6 +105,291 @@ final class ChatRoomViewModelTests: XCTestCase {
         ])
     }
 
+    func test_찬성측인_경우_발언권이_있을때_편집이_가능하다() {
+        var testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
+        testUserInfo.side = .agree
+
+        self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
+            .next(235, testUserInfo),
+            .completed(237)
+        ]).asObservable()
+
+        self.discussionUsecase.statusStream = self.scheduler.createHotObservable([
+            .next(240, 0),
+            .next(250, 1),
+            .next(260, 2),
+            .next(270, 4),
+            .next(280, 5),
+            .next(290, 9),
+            .next(300, 10),
+            .next(310, 12)
+        ]).asObservable()
+
+        let triggerTestableDriver: Driver<Void> = self.scheduler.createHotObservable([
+            .next(210, ())
+        ]).asDriverOnErrorJustComplete()
+
+        let testableObserver = self.scheduler.createObserver(Bool.self)
+
+        let input = ChatRoomViewModel.Input(
+            trigger: triggerTestableDriver,
+            send: Driver.just(()),
+            menu: Driver.just(()),
+            content: Driver.just(""),
+            disappear: Driver.just(())
+        )
+        let output = self.viewModel.transform(input: input)
+
+        output.editableEnable
+            .drive(testableObserver)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(testableObserver.events, [
+            .next(240, true),
+            .next(250, true),
+            .next(260, true),
+            .next(270, true),
+            .next(280, true),
+            .next(290, true),
+            .next(300, true),
+            .next(310, true)
+        ])
+    }
+
+    func test_반대측인_경우_발언권이_없을때_편집이_불가능하다() {
+        var testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
+        testUserInfo.side = .disagree
+
+        self.userInfoUsecase.uidStream = self.scheduler.createHotObservable([
+            .next(230, "testUID"),
+            .completed(232)
+        ]).asObservable()
+
+        self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
+            .next(235, testUserInfo),
+            .completed(237)
+        ]).asObservable()
+
+        self.discussionUsecase.statusStream = self.scheduler.createHotObservable([
+            .next(240, 2),
+            .next(250, 5),
+            .next(260, 7),
+            .next(270, 9),
+            .next(280, 12),
+            .next(290, 13)
+        ]).asObservable()
+
+        let triggerTestableDriver: Driver<Void> = self.scheduler.createHotObservable([
+            .next(210, ())
+        ]).asDriverOnErrorJustComplete()
+
+        let testableObserver = self.scheduler.createObserver(Bool.self)
+
+        let input = ChatRoomViewModel.Input(
+            trigger: triggerTestableDriver,
+            send: Driver.just(()),
+            menu: Driver.just(()),
+            content: Driver.just(""),
+            disappear: Driver.just(())
+        )
+        let output = self.viewModel.transform(input: input)
+
+        output.editableEnable
+            .drive(testableObserver)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(testableObserver.events, [
+            .next(240, false),
+            .next(250, false),
+            .next(260, false),
+            .next(270, false),
+            .next(280, false),
+            .next(290, false)
+        ])
+    }
+
+    func test_반대측인_경우_발언권이_있을때_편집이_가능하다() {
+
+        var testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
+        testUserInfo.side = .disagree
+
+        self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
+            .next(235, testUserInfo),
+            .completed(237)
+        ]).asObservable()
+
+        self.discussionUsecase.statusStream = self.scheduler.createHotObservable([
+            .next(240, 0),
+            .next(250, 1),
+            .next(260, 3),
+            .next(270, 4),
+            .next(280, 6),
+            .next(290, 8),
+            .next(300, 10),
+            .next(310, 11)
+        ]).asObservable()
+
+        let triggerTestableDriver: Driver<Void> = self.scheduler.createHotObservable([
+            .next(210, ())
+        ]).asDriverOnErrorJustComplete()
+
+        let testableObserver = self.scheduler.createObserver(Bool.self)
+
+        let input = ChatRoomViewModel.Input(
+            trigger: triggerTestableDriver,
+            send: Driver.just(()),
+            menu: Driver.just(()),
+            content: Driver.just(""),
+            disappear: Driver.just(())
+        )
+        let output = self.viewModel.transform(input: input)
+
+        output.editableEnable
+            .drive(testableObserver)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(testableObserver.events, [
+            .next(240, true),
+            .next(250, true),
+            .next(260, true),
+            .next(270, true),
+            .next(280, true),
+            .next(290, true),
+            .next(300, true),
+            .next(310, true)
+        ])
+    }
+
+    func test_판정단은_토론중에_편집이_불가능하다() {
+
+        var testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
+        testUserInfo.side = .judge
+
+        self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
+            .next(235, testUserInfo),
+            .completed(237)
+        ]).asObservable()
+
+        self.discussionUsecase.statusStream = self.scheduler.createHotObservable([
+            .next(240, 2),
+            .next(250, 3),
+            .next(260, 4),
+            .next(270, 5),
+            .next(280, 6),
+            .next(290, 7),
+            .next(300, 8),
+            .next(310, 9),
+            .next(320, 10),
+            .next(330, 11),
+            .next(340, 12),
+            .next(350, 13),
+        ]).asObservable()
+
+        let triggerTestableDriver: Driver<Void> = self.scheduler.createHotObservable([
+            .next(210, ())
+        ]).asDriverOnErrorJustComplete()
+
+        let testableObserver = self.scheduler.createObserver(Bool.self)
+
+        let input = ChatRoomViewModel.Input(
+            trigger: triggerTestableDriver,
+            send: Driver.just(()),
+            menu: Driver.just(()),
+            content: Driver.just(""),
+            disappear: Driver.just(())
+        )
+        let output = self.viewModel.transform(input: input)
+
+        output.editableEnable
+            .drive(testableObserver)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(testableObserver.events, [
+            .next(240, false),
+            .next(250, false),
+            .next(260, false),
+            .next(270, false),
+            .next(280, false),
+            .next(290, false),
+            .next(300, false),
+            .next(310, false),
+            .next(320, false),
+            .next(330, false),
+            .next(340, false),
+            .next(350, false)
+        ])
+    }
+
+    func test_관람객은_토론중에_편집이_불가능하다() {
+
+        var testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
+        testUserInfo.side = .observer
+
+        self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
+            .next(235, testUserInfo),
+            .completed(237)
+        ]).asObservable()
+
+        self.discussionUsecase.statusStream = self.scheduler.createHotObservable([
+            .next(240, 2),
+            .next(250, 3),
+            .next(260, 4),
+            .next(270, 5),
+            .next(280, 6),
+            .next(290, 7),
+            .next(300, 8),
+            .next(310, 9),
+            .next(320, 10),
+            .next(330, 11),
+            .next(340, 12),
+            .next(350, 13),
+        ]).asObservable()
+
+        let triggerTestableDriver: Driver<Void> = self.scheduler.createHotObservable([
+            .next(210, ())
+        ]).asDriverOnErrorJustComplete()
+
+        let testableObserver = self.scheduler.createObserver(Bool.self)
+
+        let input = ChatRoomViewModel.Input(
+            trigger: triggerTestableDriver,
+            send: Driver.just(()),
+            menu: Driver.just(()),
+            content: Driver.just(""),
+            disappear: Driver.just(())
+        )
+        let output = self.viewModel.transform(input: input)
+
+        output.editableEnable
+            .drive(testableObserver)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(testableObserver.events, [
+            .next(240, false),
+            .next(250, false),
+            .next(260, false),
+            .next(270, false),
+            .next(280, false),
+            .next(290, false),
+            .next(300, false),
+            .next(310, false),
+            .next(320, false),
+            .next(330, false),
+            .next(340, false),
+            .next(350, false)
+        ])
+    }
+
 }
 
 extension ChatRoomViewModelTests {
@@ -126,7 +406,7 @@ extension ChatRoomViewModelTests {
             self.voteAlertStream = PublishSubject<Side>.init()
         }
 
-        func toChatRoom(_ chatRoom: ChatRoom) {}
+        func toChatRoom(_ uid: String, _ chatRoom: ChatRoom) {}
 
         func toSideMenu(_ chatRoom: ChatRoom) {}
 
