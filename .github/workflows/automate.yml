@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: macos-latest
     env: 
-      XC_VERSION: ${{ '13.3' }}
+      XC_VERSION: ${{ '13.0' }}
       XC_PROJECT: ${{ 'Discussion-Korea.xcodeproj' }}
       XC_SCHEME: ${{ 'Discussion-Korea' }}
       KEYCHAIN: ${{ 'test.keychain' }} # GitHub가상 머신에 키체인 생성할때의 이름
