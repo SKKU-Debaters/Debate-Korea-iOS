@@ -16,8 +16,6 @@ final class ChatRoomViewController: UIViewController {
 
     var viewModel: ChatRoomViewModel!
 
-    private var itemViewModels: [ChatItemViewModel] = []
-
     private let menuButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
         button.tintColor = .label
@@ -110,21 +108,6 @@ final class ChatRoomViewController: UIViewController {
         self.view.backgroundColor = .systemBackground
     }
 
-//    override func updateViewConstraints() {
-//        super.updateViewConstraints()
-//        self.messageCollectionView.snp.makeConstraints { make in
-//            make.edges.equalTo(0)
-//        }
-//        self.messageTextView.snp.makeConstraints { make in
-//            make.left.right.equalTo(0)
-//            if #available(iOS 11.0, *) {
-//                make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
-//            } else {
-//                make.bottom.equalTo(self.bottomLayoutGuide.snp.top)
-//            }
-//        }
-//    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setSubViews()
@@ -133,8 +116,6 @@ final class ChatRoomViewController: UIViewController {
 
     private func setSubViews() {
         self.view.addSubview(self.messageCollectionView)
-        self.messageCollectionView.dataSource = self
-
         self.view.addSubview(self.noticeView)
         let inputBackground = UIView()
         inputBackground.backgroundColor = .systemBackground
@@ -205,22 +186,15 @@ final class ChatRoomViewController: UIViewController {
         )
         let output = self.viewModel.transform(input: input)
 
-        output.chatItems.drive { [unowned self] model in
-            let indexPath = IndexPath(item: self.itemViewModels.count, section: 0)
-            self.itemViewModels.append(model)
-            self.messageCollectionView.insertItems(at: [indexPath])
-            self.messageCollectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+        output.chatItems.drive(self.messageCollectionView.rx.items) { collectionView, index, model in
+            let indexPath = IndexPath(item: index, section: 0)
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: model.identifier, for: indexPath) as? ChatCell
+            else { return UICollectionViewCell() }
+            cell.bind(model)
+            cell.isAccessibilityElement = true
+            cell.accessibilityLabel = cell.getAccessibilityLabel(model)
+            return cell
         }.disposed(by: self.disposeBag)
-
-        output.mask.drive { [unowned self] uid in
-            if let item = self.itemViewModels.firstIndex(where: { $0.chat.uid! == uid }) {
-                let itemPath = IndexPath(item: item, section: 0)
-                self.itemViewModels[item].chat.toxic = true
-                self.messageCollectionView.reloadItems(at: [itemPath])
-            }
-        }.disposed(by: self.disposeBag)
-
-        output.userInfos.drive().disposed(by: self.disposeBag)
 
         output.notice.map { $0.isEmpty }.drive(self.noticeView.rx.isHidden)
             .disposed(by: self.disposeBag)
@@ -244,23 +218,5 @@ final class ChatRoomViewController: UIViewController {
 
         output.events.drive().disposed(by: self.disposeBag)
     }
-
-}
-
-extension ChatRoomViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.itemViewModels.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let model = self.itemViewModels[indexPath.item]
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: model.identifier, for: indexPath) as? ChatCell
-        else { return UICollectionViewCell() }
-        cell.bind(model)
-        cell.isAccessibilityElement = true
-        cell.accessibilityLabel = cell.getAccessibilityLabel(model)
-        return cell
-    }
-    
 
 }
