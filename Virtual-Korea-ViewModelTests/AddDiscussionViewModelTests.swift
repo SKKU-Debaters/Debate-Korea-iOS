@@ -23,7 +23,7 @@ final class AddDiscussionViewModelTests: XCTestCase {
     private var disposeBag: DisposeBag!
     private var scheduler: TestScheduler!
 
-    // MARK: methods
+    // MARK: - methods
 
     override func setUp() {
         super.setUp()
