@@ -17,7 +17,7 @@
                BlueprintIdentifier = "3F33B01C284993C100FF1783"
                BuildableName = "Virtual-Korea.app"
                BlueprintName = "Virtual-Korea"
-               ReferencedContainer = "container:Virtual-Korea.xcodeproj">
+               ReferencedContainer = "container:Discussion-Korea.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "3F33B01C284993C100FF1783"
             BuildableName = "Virtual-Korea.app"
             BlueprintName = "Virtual-Korea"
-            ReferencedContainer = "container:Virtual-Korea.xcodeproj">
+            ReferencedContainer = "container:Discussion-Korea.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -46,7 +46,7 @@
                BlueprintIdentifier = "3F6FC8F32850A62F00A08784"
                BuildableName = "Virtual-Korea-ViewModelTests.xctest"
                BlueprintName = "Virtual-Korea-ViewModelTests"
-               ReferencedContainer = "container:Virtual-Korea.xcodeproj">
+               ReferencedContainer = "container:Discussion-Korea.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -56,7 +56,7 @@
                BlueprintIdentifier = "3F33B03C284993C400FF1783"
                BuildableName = "Virtual-KoreaUITests.xctest"
                BlueprintName = "Virtual-KoreaUITests"
-               ReferencedContainer = "container:Virtual-Korea.xcodeproj">
+               ReferencedContainer = "container:Discussion-Korea.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "3F33B01C284993C100FF1783"
             BuildableName = "Virtual-Korea.app"
             BlueprintName = "Virtual-Korea"
-            ReferencedContainer = "container:Virtual-Korea.xcodeproj">
+            ReferencedContainer = "container:Discussion-Korea.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -95,7 +95,7 @@
             BlueprintIdentifier = "3F33B01C284993C100FF1783"
             BuildableName = "Virtual-Korea.app"
             BlueprintName = "Virtual-Korea"
-            ReferencedContainer = "container:Virtual-Korea.xcodeproj">
+            ReferencedContainer = "container:Discussion-Korea.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

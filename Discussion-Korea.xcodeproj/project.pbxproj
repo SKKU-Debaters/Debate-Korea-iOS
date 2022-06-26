@@ -629,7 +629,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3F33B018284993C100FF1783 /* Build configuration list for PBXProject "Virtual-Korea" */;
+			buildConfigurationList = 3F33B018284993C100FF1783 /* Build configuration list for PBXProject "Discussion-Korea" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -951,7 +951,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.9.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "bestowing.Virtual-Korea";
+				PRODUCT_BUNDLE_IDENTIFIER = "bestowing.Discussion-Korea";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -980,7 +980,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.9.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "bestowing.Virtual-Korea";
+				PRODUCT_BUNDLE_IDENTIFIER = "bestowing.Discussion-Korea";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1027,7 +1027,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F33B018284993C100FF1783 /* Build configuration list for PBXProject "Virtual-Korea" */ = {
+		3F33B018284993C100FF1783 /* Build configuration list for PBXProject "Discussion-Korea" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F33B045284993C400FF1783 /* Debug */,
