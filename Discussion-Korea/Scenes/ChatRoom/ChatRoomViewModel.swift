@@ -87,8 +87,8 @@ final class ChatRoomViewModel: ViewModelType {
             }
             .mapToVoid()
 
-        let resultEvent = input.trigger
-            .flatMapFirst { [unowned self] _ -> Driver<Discussion.Result> in
+        let resultEvent: Driver<Void> = input.trigger
+            .flatMapFirst { [unowned self] _ in
                 self.discussionUsecase.discussionResult(userID: self.uid, chatRoomID: self.chatRoom.uid)
                     .asDriverOnErrorJustComplete()
             }
@@ -187,9 +187,8 @@ final class ChatRoomViewModel: ViewModelType {
                         newItemViewModel = OtherChatItemViewModel(with: chat)
                     }
                 }
-                return [newItemViewModel]
+                return viewModels + [newItemViewModel]
             }
-            .map { $0.first! }
 
         let masking = input.trigger
             .flatMapFirst { [unowned self] in
@@ -197,12 +196,12 @@ final class ChatRoomViewModel: ViewModelType {
                     .asDriverOnErrorJustComplete()
             }
 
-//        let maskingChatItems = Driver.combineLatest(masking.startWith(""), chatItems)
-//            .map { (uid: String, models) -> [ChatItemViewModel] in
-//                let model = models.first { $0.chat.uid == uid }
-//                model?.chat.toxic = true
-//                return models
-//            }
+        let maskingChatItems = Driver.combineLatest(masking.startWith(""), chatItems)
+            .map { (uid: String, models) -> [ChatItemViewModel] in
+                let model = models.first { $0.chat.uid == uid }
+                model?.chat.toxic = true
+                return models
+            }
 
         let status = input.trigger
             .flatMapFirst { [unowned self] in
@@ -307,9 +306,7 @@ final class ChatRoomViewModel: ViewModelType {
             .merge()
 
         return Output(
-            chatItems: chatItems,
-            mask: masking,
-            userInfos: userInfos,
+            chatItems: maskingChatItems,
             sendEnable: canSend,
             notice: remainTime,
             editableEnable: canEditable,
@@ -331,9 +328,7 @@ extension ChatRoomViewModel {
     }
     
     struct Output {
-        let chatItems: Driver<ChatItemViewModel>
-        let mask: Driver<String>
-        let userInfos: Driver<[String: UserInfo]>
+        let chatItems: Driver<[ChatItemViewModel]>
         let sendEnable: Driver<Bool>
         let notice: Driver<String>
         let editableEnable: Driver<Bool>

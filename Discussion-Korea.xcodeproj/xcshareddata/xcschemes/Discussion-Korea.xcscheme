@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3F33B01C284993C100FF1783"
-               BuildableName = "Virtual-Korea.app"
+               BuildableName = "Discussion-Korea.app"
                BlueprintName = "Discussion-Korea"
                ReferencedContainer = "container:Discussion-Korea.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F33B01C284993C100FF1783"
-            BuildableName = "Virtual-Korea.app"
+            BuildableName = "Discussion-Korea.app"
             BlueprintName = "Discussion-Korea"
             ReferencedContainer = "container:Discussion-Korea.xcodeproj">
          </BuildableReference>
@@ -44,7 +44,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3F6FC8F32850A62F00A08784"
-               BuildableName = "Virtual-Korea-ViewModelTests.xctest"
+               BuildableName = "Discussion-Korea-ViewModelTests.xctest"
                BlueprintName = "Discussion-Korea-ViewModelTests"
                ReferencedContainer = "container:Discussion-Korea.xcodeproj">
             </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F33B01C284993C100FF1783"
-            BuildableName = "Virtual-Korea.app"
+            BuildableName = "Discussion-Korea.app"
             BlueprintName = "Discussion-Korea"
             ReferencedContainer = "container:Discussion-Korea.xcodeproj">
          </BuildableReference>
@@ -93,7 +93,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F33B01C284993C100FF1783"
-            BuildableName = "Virtual-Korea.app"
+            BuildableName = "Discussion-Korea.app"
             BlueprintName = "Discussion-Korea"
             ReferencedContainer = "container:Discussion-Korea.xcodeproj">
          </BuildableReference>
