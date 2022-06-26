@@ -56,6 +56,184 @@ final class ChatRoomViewModelTests: XCTestCase {
         super.tearDown()
     }
 
+    // TODO: userInfos 다 없애고 mask도 없애고 chatItems만 남기기
+
+    func test_토론이_진행중이지_않더라도_내용이_없다면_채팅을_보낼수_없다() {
+        let testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
+
+        self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
+            .next(235, testUserInfo),
+            .completed(237)
+        ]).asObservable()
+
+        self.discussionUsecase.statusStream = self.scheduler.createHotObservable([
+            .next(240, 0)
+        ]).asObservable()
+
+        let contentTestableDriver: Driver<String> = self.scheduler.createHotObservable([
+            .next(250, "")
+        ]).asDriverOnErrorJustComplete()
+
+        let testableObserver = self.scheduler.createObserver(Bool.self)
+
+        let input = ChatRoomViewModel.Input(
+            trigger: Driver.just(()),
+            send: Driver.just(()),
+            menu: Driver.just(()),
+            content: contentTestableDriver,
+            disappear: Driver.just(())
+        )
+        let output = self.viewModel.transform(input: input)
+
+        output.sendEnable
+            .drive(testableObserver)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(testableObserver.events, [
+            .next(250, false)
+        ])
+    }
+
+    func test_토론이_진행중이지_않고_내용이_있다면_채팅을_보낼수_있다() {
+        let testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
+
+        self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
+            .next(235, testUserInfo),
+            .completed(237)
+        ]).asObservable()
+
+        self.discussionUsecase.statusStream = self.scheduler.createHotObservable([
+            .next(240, 0)
+        ]).asObservable()
+
+        let contentTestableDriver: Driver<String> = self.scheduler.createHotObservable([
+            .next(250, "내용")
+        ]).asDriverOnErrorJustComplete()
+
+        let testableObserver = self.scheduler.createObserver(Bool.self)
+
+        let input = ChatRoomViewModel.Input(
+            trigger: Driver.just(()),
+            send: Driver.just(()),
+            menu: Driver.just(()),
+            content: contentTestableDriver,
+            disappear: Driver.just(())
+        )
+        let output = self.viewModel.transform(input: input)
+
+        output.sendEnable
+            .drive(testableObserver)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(testableObserver.events, [
+            .next(250, true)
+        ])
+    }
+
+    func test_찬성측인_경우_내용이_있어도_발언권이_없다면_채팅을_보낼수_없다() {
+        var testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
+        testUserInfo.side = .agree
+
+        self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
+            .next(235, testUserInfo),
+            .completed(237)
+        ]).asObservable()
+
+        self.discussionUsecase.statusStream = self.scheduler.createHotObservable([
+            .next(250, 3),
+            .next(260, 6),
+            .next(270, 7),
+            .next(280, 8),
+            .next(290, 11),
+            .next(300, 13)
+        ]).asObservable()
+
+        let contentTestableDriver: Driver<String> = self.scheduler.createHotObservable([
+            .next(250, "내용")
+        ]).asDriverOnErrorJustComplete()
+
+        let testableObserver = self.scheduler.createObserver(Bool.self)
+
+        let input = ChatRoomViewModel.Input(
+            trigger: Driver.just(()),
+            send: Driver.just(()),
+            menu: Driver.just(()),
+            content: contentTestableDriver,
+            disappear: Driver.just(())
+        )
+        let output = self.viewModel.transform(input: input)
+
+        output.editableEnable.drive().disposed(by: self.disposeBag)
+        output.sendEnable
+            .drive(testableObserver)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(testableObserver.events, [
+            .next(250, false),
+            .next(260, false),
+            .next(270, false),
+            .next(280, false),
+            .next(290, false),
+            .next(300, false)
+        ])
+    }
+
+    func test_반대측인_경우_내용이_있어도_발언권이_없다면_채팅을_보낼수_없다() {
+        var testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
+        testUserInfo.side = .disagree
+
+        self.userInfoUsecase.roomUserInfoStream = self.scheduler.createHotObservable([
+            .next(235, testUserInfo),
+            .completed(237)
+        ]).asObservable()
+
+        self.discussionUsecase.statusStream = self.scheduler.createHotObservable([
+            .next(250, 2),
+            .next(260, 5),
+            .next(270, 7),
+            .next(280, 9),
+            .next(290, 12),
+            .next(300, 13)
+        ]).asObservable()
+
+        let contentTestableDriver: Driver<String> = self.scheduler.createHotObservable([
+            .next(250, "내용")
+        ]).asDriverOnErrorJustComplete()
+
+        let testableObserver = self.scheduler.createObserver(Bool.self)
+
+        let input = ChatRoomViewModel.Input(
+            trigger: Driver.just(()),
+            send: Driver.just(()),
+            menu: Driver.just(()),
+            content: contentTestableDriver,
+            disappear: Driver.just(())
+        )
+        let output = self.viewModel.transform(input: input)
+
+        output.editableEnable.drive().disposed(by: self.disposeBag)
+        output.sendEnable
+            .drive(testableObserver)
+            .disposed(by: self.disposeBag)
+
+        self.scheduler.start()
+
+        XCTAssertEqual(testableObserver.events, [
+            .next(250, false),
+            .next(260, false),
+            .next(270, false),
+            .next(280, false),
+            .next(290, false),
+            .next(300, false)
+        ])
+    }
+
     func test_찬성측인_경우_발언권이_없을때_편집이_불가능하다() {
         var testUserInfo = UserInfo(uid: "testUID", nickname: "testNickname")
         testUserInfo.side = .agree

@@ -51,8 +51,6 @@ final class ChatRoomViewModel: ViewModelType {
 
     func transform(input: Input) -> Output {
 
-        let noticeHidden = PublishSubject<Bool>()
-
         let remainTime: Driver<String> = input.trigger
             .flatMapFirst { [unowned self] in
                 self.discussionUsecase.remainTime(roomUID: self.chatRoom.uid)
@@ -65,12 +63,13 @@ final class ChatRoomViewModel: ViewModelType {
             .flatMapLatest { remainSeconds in
                 Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
                     .map { remainSeconds - $0 }
-                    .take(until: { $0 == -1 })
-                    .do(onNext: { _ in noticeHidden.on(.next(false)) },
-                        onCompleted: { noticeHidden.on(.next(true)) })
+                    .take(until: { $0 == -2 })
                     .asDriverOnErrorJustComplete()
             }
-            .map { "남은 시간: \(String(format: "%02d", $0 / 60)):\(String(format: "%02d", $0 % 60))" }
+            .map {
+                if $0 == -1 { return "" }
+                return "남은 시간: \(String(format: "%02d", $0 / 60)):\(String(format: "%02d", $0 % 60))"
+            }
 
         let enterEvent: Driver<Void> = input.trigger
             .flatMapFirst { [unowned self] in
@@ -249,29 +248,23 @@ final class ChatRoomViewModel: ViewModelType {
                     .asDriverOnErrorJustComplete()
             }
 
-        let contentEmpty = input.content.map { !$0.isEmpty }
-
-        let statusAndSide = Driver.combineLatest(status, side)
-
-        let canEditable = statusAndSide.map { (status, side) -> Bool in
-            guard status >= 2
-            else { return true }
-            switch side {
-            case .agree:
-                return [2, 4, 5, 9, 10, 12].contains(status)
-            case .disagree:
-                return [3, 4, 6, 8, 10, 11].contains(status)
-            default:
-                return false
+        let canEditable = Driver.combineLatest(status, side)
+            .map { (status, side) -> Bool in
+                guard status >= 2
+                else { return true }
+                switch side {
+                case .agree:
+                    return [2, 4, 5, 9, 10, 12].contains(status)
+                case .disagree:
+                    return [3, 4, 6, 8, 10, 11].contains(status)
+                default:
+                    return false
+                }
             }
-        }
 
-        let canSend = Driver.of(
-            contentEmpty,
-            canEditable
-                .withLatestFrom(contentEmpty) { return $0 && $1 }
-        )
-            .merge()
+        let canSend = Driver.combineLatest(canEditable, input.content) {
+            return $0 && !$1.isEmpty
+        }
 
         let sideMenuEvent = input.menu
             .do(onNext: { [unowned self] in
@@ -318,7 +311,6 @@ final class ChatRoomViewModel: ViewModelType {
             mask: masking,
             userInfos: userInfos,
             sendEnable: canSend,
-            noticeHidden: noticeHidden.distinctUntilChanged().asDriverOnErrorJustComplete(),
             notice: remainTime,
             editableEnable: canEditable,
             sendEvent: sendEvent,
@@ -343,7 +335,6 @@ extension ChatRoomViewModel {
         let mask: Driver<String>
         let userInfos: Driver<[String: UserInfo]>
         let sendEnable: Driver<Bool>
-        let noticeHidden: Driver<Bool>
         let notice: Driver<String>
         let editableEnable: Driver<Bool>
         let sendEvent: Driver<Void>

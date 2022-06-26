@@ -27,6 +27,7 @@ final class ChatRoomViewController: UIViewController {
     }()
 
     private let noticeView: UILabel = {
+        // TODO: 별도의 View를 만들어서 content가 있는지 없는지에 따라 자동으로 hidden 처리하기
         let label = PaddingLabel(padding: UIEdgeInsets(
             top: 8.0, left: 20.0, bottom: 8.0, right: 20.0)
         )
@@ -221,13 +222,14 @@ final class ChatRoomViewController: UIViewController {
 
         output.userInfos.drive().disposed(by: self.disposeBag)
 
-        output.noticeHidden.drive(self.noticeView.rx.isHidden)
+        output.notice.map { $0.isEmpty }.drive(self.noticeView.rx.isHidden)
             .disposed(by: self.disposeBag)
 
         output.notice.drive(self.noticeView.rx.text)
             .disposed(by: self.disposeBag)
 
-        output.sendEnable.drive(self.sendButton.rx.isEnabled)
+        output.sendEnable
+            .drive(self.sendButton.rx.isEnabled)
             .disposed(by: self.disposeBag)
 
         output.editableEnable
