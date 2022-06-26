@@ -73,6 +73,7 @@
 		3FAC1AC828686FFC007EBE08 /* ChatRoomSideMenuViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC1AC728686FFC007EBE08 /* ChatRoomSideMenuViewModelTests.swift */; };
 		3FAC1ACA2868710B007EBE08 /* EnterGuestViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC1AC92868710B007EBE08 /* EnterGuestViewModelTests.swift */; };
 		3FAC1ACC28687324007EBE08 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC1ACB28687324007EBE08 /* HomeViewModelTests.swift */; };
+		3FAC1ACE2868ADE8007EBE08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FAC1ACD2868ADE8007EBE08 /* GoogleService-Info.plist */; };
 		3FDD03A628499DBB0086F59A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDD03A528499DBB0086F59A /* Kingfisher */; };
 		3FDD03AC28499E490086F59A /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDD03AB28499E490086F59A /* SideMenu */; };
 		3FDD03AF28499F3B0086F59A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDD03AE28499F3B0086F59A /* SnapKit */; };
@@ -129,7 +130,6 @@
 		3FDD042E2849A4510086F59A /* ActivityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD04282849A4510086F59A /* ActivityTracker.swift */; };
 		3FDD042F2849A4510086F59A /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD04292849A4510086F59A /* Observable+.swift */; };
 		3FDD04302849A4510086F59A /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD042A2849A4510086F59A /* UIColor+.swift */; };
-		3FDD04382849A6310086F59A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FDD04372849A6310086F59A /* GoogleService-Info.plist */; };
 		3FDD04582849D93A0086F59A /* RxKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDD04572849D93A0086F59A /* RxKeyboard */; };
 /* End PBXBuildFile section */
 
@@ -167,10 +167,10 @@
 		3F2A7E5C2862148700B62C7D /* SerialOtherChatItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialOtherChatItemViewModel.swift; sourceTree = "<group>"; };
 		3F2A7E5E286214A000B62C7D /* BotChatItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotChatItemViewModel.swift; sourceTree = "<group>"; };
 		3F2A7E60286214AF00B62C7D /* SerialBotChatItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialBotChatItemViewModel.swift; sourceTree = "<group>"; };
-		3F33B01D284993C100FF1783 /* Virtual-Korea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual-Korea.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F33B01D284993C100FF1783 /* Discussion-Korea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Discussion-Korea.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F33B029284993C300FF1783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F33B02E284993C300FF1783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F6FC8F42850A62F00A08784 /* Virtual-Korea-ViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Virtual-Korea-ViewModelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6FC8F42850A62F00A08784 /* Discussion-Korea-ViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Discussion-Korea-ViewModelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6FC90A2850AF2600A08784 /* AddChatRoomViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChatRoomViewModelTests.swift; sourceTree = "<group>"; };
 		3F6FC9102850B30C00A08784 /* MockUserInfoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserInfoUsecase.swift; sourceTree = "<group>"; };
 		3F6FC9122850B31E00A08784 /* MockChatRoomUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChatRoomUsecase.swift; sourceTree = "<group>"; };
@@ -187,6 +187,7 @@
 		3FAC1AC728686FFC007EBE08 /* ChatRoomSideMenuViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomSideMenuViewModelTests.swift; sourceTree = "<group>"; };
 		3FAC1AC92868710B007EBE08 /* EnterGuestViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterGuestViewModelTests.swift; sourceTree = "<group>"; };
 		3FAC1ACB28687324007EBE08 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		3FAC1ACD2868ADE8007EBE08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FDD03B42849A1990086F59A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FDD03B72849A1A80086F59A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDD03B82849A1A80086F59A /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
@@ -240,7 +241,6 @@
 		3FDD04282849A4510086F59A /* ActivityTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTracker.swift; sourceTree = "<group>"; };
 		3FDD04292849A4510086F59A /* Observable+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+.swift"; sourceTree = "<group>"; };
 		3FDD042A2849A4510086F59A /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
-		3FDD04372849A6310086F59A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FDD043C2849AA900086F59A /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -286,7 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				3F33B01F284993C100FF1783 /* Discussion-Korea */,
-				3F6FC8F52850A62F00A08784 /* Virtual-Korea-ViewModelTests */,
+				3F6FC8F52850A62F00A08784 /* Discussion-Korea-ViewModelTests */,
 				3F33B01E284993C100FF1783 /* Products */,
 				3F33B059284994D200FF1783 /* Frameworks */,
 			);
@@ -295,8 +295,8 @@
 		3F33B01E284993C100FF1783 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F33B01D284993C100FF1783 /* Virtual-Korea.app */,
-				3F6FC8F42850A62F00A08784 /* Virtual-Korea-ViewModelTests.xctest */,
+				3F33B01D284993C100FF1783 /* Discussion-Korea.app */,
+				3F6FC8F42850A62F00A08784 /* Discussion-Korea-ViewModelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3F6FC8F52850A62F00A08784 /* Virtual-Korea-ViewModelTests */ = {
+		3F6FC8F52850A62F00A08784 /* Discussion-Korea-ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
 				3F6FC90F2850B24100A08784 /* Mock */,
@@ -334,7 +334,7 @@
 				3FAC1AC92868710B007EBE08 /* EnterGuestViewModelTests.swift */,
 				3FAC1ACB28687324007EBE08 /* HomeViewModelTests.swift */,
 			);
-			path = "Virtual-Korea-ViewModelTests";
+			path = "Discussion-Korea-ViewModelTests";
 			sourceTree = "<group>";
 		};
 		3F6FC90F2850B24100A08784 /* Mock */ = {
@@ -352,7 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				3F33B029284993C300FF1783 /* Assets.xcassets */,
-				3FDD04372849A6310086F59A /* GoogleService-Info.plist */,
+				3FAC1ACD2868ADE8007EBE08 /* GoogleService-Info.plist */,
 				3F33B02E284993C300FF1783 /* Info.plist */,
 				3FDD03B42849A1990086F59A /* LaunchScreen.storyboard */,
 			);
@@ -563,9 +563,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F33B01C284993C100FF1783 /* Virtual-Korea */ = {
+		3F33B01C284993C100FF1783 /* Discussion-Korea */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F33B047284993C400FF1783 /* Build configuration list for PBXNativeTarget "Virtual-Korea" */;
+			buildConfigurationList = 3F33B047284993C400FF1783 /* Build configuration list for PBXNativeTarget "Discussion-Korea" */;
 			buildPhases = (
 				3F33B019284993C100FF1783 /* Sources */,
 				3F33B01A284993C100FF1783 /* Frameworks */,
@@ -576,7 +576,7 @@
 			);
 			dependencies = (
 			);
-			name = "Virtual-Korea";
+			name = "Discussion-Korea";
 			packageProductDependencies = (
 				3FDD03A528499DBB0086F59A /* Kingfisher */,
 				3FDD03AB28499E490086F59A /* SideMenu */,
@@ -586,12 +586,12 @@
 				3F6FC8742849EFCF00A08784 /* FirebasePlatform */,
 			);
 			productName = "Virtual-Korea";
-			productReference = 3F33B01D284993C100FF1783 /* Virtual-Korea.app */;
+			productReference = 3F33B01D284993C100FF1783 /* Discussion-Korea.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3F6FC8F32850A62F00A08784 /* Virtual-Korea-ViewModelTests */ = {
+		3F6FC8F32850A62F00A08784 /* Discussion-Korea-ViewModelTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F6FC8FC2850A62F00A08784 /* Build configuration list for PBXNativeTarget "Virtual-Korea-ViewModelTests" */;
+			buildConfigurationList = 3F6FC8FC2850A62F00A08784 /* Build configuration list for PBXNativeTarget "Discussion-Korea-ViewModelTests" */;
 			buildPhases = (
 				3F6FC8F02850A62F00A08784 /* Sources */,
 				3F6FC8F12850A62F00A08784 /* Frameworks */,
@@ -602,12 +602,12 @@
 			dependencies = (
 				3F6FC8F92850A62F00A08784 /* PBXTargetDependency */,
 			);
-			name = "Virtual-Korea-ViewModelTests";
+			name = "Discussion-Korea-ViewModelTests";
 			packageProductDependencies = (
 				3F6FC9082850ABC100A08784 /* RxTest */,
 			);
 			productName = "Virtual-Korea-ViewModelTests";
-			productReference = 3F6FC8F42850A62F00A08784 /* Virtual-Korea-ViewModelTests.xctest */;
+			productReference = 3F6FC8F42850A62F00A08784 /* Discussion-Korea-ViewModelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -650,8 +650,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F33B01C284993C100FF1783 /* Virtual-Korea */,
-				3F6FC8F32850A62F00A08784 /* Virtual-Korea-ViewModelTests */,
+				3F33B01C284993C100FF1783 /* Discussion-Korea */,
+				3F6FC8F32850A62F00A08784 /* Discussion-Korea-ViewModelTests */,
 			);
 		};
 /* End PBXProject section */
@@ -663,7 +663,7 @@
 			files = (
 				3FDD03B52849A1990086F59A /* LaunchScreen.storyboard in Resources */,
 				3F33B02A284993C300FF1783 /* Assets.xcassets in Resources */,
-				3FDD04382849A6310086F59A /* GoogleService-Info.plist in Resources */,
+				3FAC1ACE2868ADE8007EBE08 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,7 +810,7 @@
 /* Begin PBXTargetDependency section */
 		3F6FC8F92850A62F00A08784 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3F33B01C284993C100FF1783 /* Virtual-Korea */;
+			target = 3F33B01C284993C100FF1783 /* Discussion-Korea */;
 			targetProxy = 3F6FC8F82850A62F00A08784 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -939,7 +939,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4PL3T83JJM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Virtual-Korea/Resources/Info.plist";
+				INFOPLIST_FILE = "Discussion-Korea/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "방구석대한민국";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -968,7 +969,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4PL3T83JJM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Virtual-Korea/Resources/Info.plist";
+				INFOPLIST_FILE = "Discussion-Korea/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "방구석대한민국";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1036,7 +1038,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F33B047284993C400FF1783 /* Build configuration list for PBXNativeTarget "Virtual-Korea" */ = {
+		3F33B047284993C400FF1783 /* Build configuration list for PBXNativeTarget "Discussion-Korea" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F33B048284993C400FF1783 /* Debug */,
@@ -1045,7 +1047,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F6FC8FC2850A62F00A08784 /* Build configuration list for PBXNativeTarget "Virtual-Korea-ViewModelTests" */ = {
+		3F6FC8FC2850A62F00A08784 /* Build configuration list for PBXNativeTarget "Discussion-Korea-ViewModelTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F6FC8FA2850A62F00A08784 /* Debug */,

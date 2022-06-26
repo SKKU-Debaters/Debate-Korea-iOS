@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3F33B01C284993C100FF1783"
                BuildableName = "Virtual-Korea.app"
-               BlueprintName = "Virtual-Korea"
+               BlueprintName = "Discussion-Korea"
                ReferencedContainer = "container:Discussion-Korea.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F33B01C284993C100FF1783"
             BuildableName = "Virtual-Korea.app"
-            BlueprintName = "Virtual-Korea"
+            BlueprintName = "Discussion-Korea"
             ReferencedContainer = "container:Discussion-Korea.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -45,7 +45,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3F6FC8F32850A62F00A08784"
                BuildableName = "Virtual-Korea-ViewModelTests.xctest"
-               BlueprintName = "Virtual-Korea-ViewModelTests"
+               BlueprintName = "Discussion-Korea-ViewModelTests"
                ReferencedContainer = "container:Discussion-Korea.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -77,7 +77,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F33B01C284993C100FF1783"
             BuildableName = "Virtual-Korea.app"
-            BlueprintName = "Virtual-Korea"
+            BlueprintName = "Discussion-Korea"
             ReferencedContainer = "container:Discussion-Korea.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -94,7 +94,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F33B01C284993C100FF1783"
             BuildableName = "Virtual-Korea.app"
-            BlueprintName = "Virtual-Korea"
+            BlueprintName = "Discussion-Korea"
             ReferencedContainer = "container:Discussion-Korea.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
