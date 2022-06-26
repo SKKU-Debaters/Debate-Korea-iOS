@@ -55,6 +55,24 @@
 		3FAC1AB22868628E007EBE08 /* DefaultEnterGuestNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC1AB12868628E007EBE08 /* DefaultEnterGuestNavigator.swift */; };
 		3FAC1AB4286862C8007EBE08 /* DefaultHomeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC1AB3286862C8007EBE08 /* DefaultHomeNavigator.swift */; };
 		3FAC1AB6286862EE007EBE08 /* DefaultSettingNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC1AB5286862EE007EBE08 /* DefaultSettingNavigator.swift */; };
+		3FAC1AB728686357007EBE08 /* ChatRoomScheduleNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03F42849A4470086F59A /* ChatRoomScheduleNavigator.swift */; };
+		3FAC1AB82868635F007EBE08 /* ChatRoomSideMenuNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03CD2849A4470086F59A /* ChatRoomSideMenuNavigator.swift */; };
+		3FAC1AB928686367007EBE08 /* EnterGuestNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03E62849A4470086F59A /* EnterGuestNavigator.swift */; };
+		3FAC1ABA2868636C007EBE08 /* HomeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03C52849A4470086F59A /* HomeNavigator.swift */; };
+		3FAC1ABB28686375007EBE08 /* SettingNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03EB2849A4470086F59A /* SettingNavigator.swift */; };
+		3FAC1ABC28686C79007EBE08 /* ChatRoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03E42849A4470086F59A /* ChatRoomListViewModel.swift */; };
+		3FAC1ABD28686C82007EBE08 /* ChatRoomScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03F82849A4470086F59A /* ChatRoomScheduleViewModel.swift */; };
+		3FAC1ABE28686C8B007EBE08 /* ChatRoomSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03CB2849A4470086F59A /* ChatRoomSideMenuViewModel.swift */; };
+		3FAC1ABF28686C91007EBE08 /* EnterGuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03E82849A4470086F59A /* EnterGuestViewModel.swift */; };
+		3FAC1AC028686C97007EBE08 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03C32849A4470086F59A /* HomeViewModel.swift */; };
+		3FAC1AC128686C9D007EBE08 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03EC2849A4470086F59A /* SettingViewModel.swift */; };
+		3FAC1AC228686E98007EBE08 /* ChatRoomItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03E02849A4470086F59A /* ChatRoomItemViewModel.swift */; };
+		3FAC1AC328686EBB007EBE08 /* ScheduleItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03F52849A4470086F59A /* ScheduleItemViewModel.swift */; };
+		3FAC1AC428686ECF007EBE08 /* ParticipantItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD03CC2849A4470086F59A /* ParticipantItemViewModel.swift */; };
+		3FAC1AC628686F02007EBE08 /* ChatRoomScheduleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC1AC528686F02007EBE08 /* ChatRoomScheduleViewModelTests.swift */; };
+		3FAC1AC828686FFC007EBE08 /* ChatRoomSideMenuViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC1AC728686FFC007EBE08 /* ChatRoomSideMenuViewModelTests.swift */; };
+		3FAC1ACA2868710B007EBE08 /* EnterGuestViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC1AC92868710B007EBE08 /* EnterGuestViewModelTests.swift */; };
+		3FAC1ACC28687324007EBE08 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC1ACB28687324007EBE08 /* HomeViewModelTests.swift */; };
 		3FDD03A628499DBB0086F59A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDD03A528499DBB0086F59A /* Kingfisher */; };
 		3FDD03AC28499E490086F59A /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDD03AB28499E490086F59A /* SideMenu */; };
 		3FDD03AF28499F3B0086F59A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3FDD03AE28499F3B0086F59A /* SnapKit */; };
@@ -165,6 +183,10 @@
 		3FAC1AB12868628E007EBE08 /* DefaultEnterGuestNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEnterGuestNavigator.swift; sourceTree = "<group>"; };
 		3FAC1AB3286862C8007EBE08 /* DefaultHomeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeNavigator.swift; sourceTree = "<group>"; };
 		3FAC1AB5286862EE007EBE08 /* DefaultSettingNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingNavigator.swift; sourceTree = "<group>"; };
+		3FAC1AC528686F02007EBE08 /* ChatRoomScheduleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomScheduleViewModelTests.swift; sourceTree = "<group>"; };
+		3FAC1AC728686FFC007EBE08 /* ChatRoomSideMenuViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomSideMenuViewModelTests.swift; sourceTree = "<group>"; };
+		3FAC1AC92868710B007EBE08 /* EnterGuestViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterGuestViewModelTests.swift; sourceTree = "<group>"; };
+		3FAC1ACB28687324007EBE08 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		3FDD03B42849A1990086F59A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FDD03B72849A1A80086F59A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDD03B82849A1A80086F59A /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
@@ -307,6 +329,10 @@
 				3F2A7E452862012300B62C7D /* AddDiscussionViewModelTests.swift */,
 				3F2A7E4C2862081400B62C7D /* ChatRoomViewModelTests.swift */,
 				3FAC1AA428685FA5007EBE08 /* ChatRoomListViewModelTests.swift */,
+				3FAC1AC528686F02007EBE08 /* ChatRoomScheduleViewModelTests.swift */,
+				3FAC1AC728686FFC007EBE08 /* ChatRoomSideMenuViewModelTests.swift */,
+				3FAC1AC92868710B007EBE08 /* EnterGuestViewModelTests.swift */,
+				3FAC1ACB28687324007EBE08 /* HomeViewModelTests.swift */,
 			);
 			path = "Virtual-Korea-ViewModelTests";
 			sourceTree = "<group>";
@@ -728,6 +754,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FAC1AC428686ECF007EBE08 /* ParticipantItemViewModel.swift in Sources */,
+				3FAC1AC328686EBB007EBE08 /* ScheduleItemViewModel.swift in Sources */,
+				3FAC1AC228686E98007EBE08 /* ChatRoomItemViewModel.swift in Sources */,
+				3FAC1AC128686C9D007EBE08 /* SettingViewModel.swift in Sources */,
+				3FAC1ACA2868710B007EBE08 /* EnterGuestViewModelTests.swift in Sources */,
+				3FAC1AC028686C97007EBE08 /* HomeViewModel.swift in Sources */,
+				3FAC1ABF28686C91007EBE08 /* EnterGuestViewModel.swift in Sources */,
+				3FAC1ABE28686C8B007EBE08 /* ChatRoomSideMenuViewModel.swift in Sources */,
+				3FAC1ABD28686C82007EBE08 /* ChatRoomScheduleViewModel.swift in Sources */,
+				3FAC1ABC28686C79007EBE08 /* ChatRoomListViewModel.swift in Sources */,
+				3FAC1AC828686FFC007EBE08 /* ChatRoomSideMenuViewModelTests.swift in Sources */,
+				3FAC1ACC28687324007EBE08 /* HomeViewModelTests.swift in Sources */,
+				3FAC1ABB28686375007EBE08 /* SettingNavigator.swift in Sources */,
+				3FAC1ABA2868636C007EBE08 /* HomeNavigator.swift in Sources */,
+				3FAC1AB928686367007EBE08 /* EnterGuestNavigator.swift in Sources */,
+				3FAC1AB82868635F007EBE08 /* ChatRoomSideMenuNavigator.swift in Sources */,
+				3FAC1AB728686357007EBE08 /* ChatRoomScheduleNavigator.swift in Sources */,
+				3FAC1AC628686F02007EBE08 /* ChatRoomScheduleViewModelTests.swift in Sources */,
 				3FAC1AA8286860F2007EBE08 /* ChatRoomListNavigator.swift in Sources */,
 				3F2A7E6228621B7E00B62C7D /* SelfChatItemViewModel.swift in Sources */,
 				3F2A7E6328621B7E00B62C7D /* OtherChatItemViewModel.swift in Sources */,

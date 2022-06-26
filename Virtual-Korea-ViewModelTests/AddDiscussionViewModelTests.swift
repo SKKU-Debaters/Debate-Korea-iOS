@@ -5,11 +5,11 @@
 //  Created by 이청수 on 2022/06/21.
 //
 
+import Domain
 import RxSwift
 import RxCocoa
 import RxTest
 import XCTest
-import Domain
 
 final class AddDiscussionViewModelTests: XCTestCase {
 
