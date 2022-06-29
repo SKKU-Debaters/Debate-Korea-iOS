@@ -42,7 +42,7 @@ jobs:
         security import "$DECRYPTED_CERTS_FILE_PATH" -k "$KEYCHAIN" -P "$CERTS_EXPORT_PWD" -A
         security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"
         mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
-        # echo `ls .github/secrets/*.mobileprovision`
+        echo `ls .github/secrets/*.mobileprovision`
         # 프로파일들을 rename하고 새로만든 디렉토리에 복사
         for PROVISION in `ls .github/secrets/*.mobileprovision`
           do
