@@ -1,5 +1,0 @@
-app_identifier("bestowing.Discussion-Korea") # The bundle identifier of your app
-apple_id(ENV["APPLE_ID"]) # Your Apple email address -> Plz set env variable in /fastlane/.env
-
-itc_team_id("124384933") # App Store Connect Team ID
-team_id("4PL3T83JJM") # Developer Portal Team ID
